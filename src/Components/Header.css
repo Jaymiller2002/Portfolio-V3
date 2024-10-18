@@ -1,0 +1,44 @@
+/* Header Styles */
+header {
+    background: #2c3e50; /* Dark background for the header */
+    color: white; /* Text color */
+    padding: 1rem 2rem; /* Padding around the header */
+    display: flex; /* Flex layout for horizontal alignment */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: sticky; /* Sticky header to keep it fixed on scroll */
+    top: 0; /* Position at the top */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Navigation Styles */
+nav {
+    display: flex; /* Flex layout for navigation items */
+}
+
+/* Link Styles */
+nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Link text color */
+    margin: 0 1.5rem; /* Space between links */
+    font-weight: bold; /* Bold text for links */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+nav a:hover {
+    color: #e67e22; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge the link on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack links vertically on small screens */
+        align-items: center; /* Center-align links */
+    }
+
+    nav a {
+        margin: 0.5rem 0; /* Space between stacked links */
+    }
+}
