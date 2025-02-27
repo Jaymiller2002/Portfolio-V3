@@ -3,6 +3,8 @@
     padding: 4rem 2rem; /* Generous padding for spacing */
     background-color: #f8f9fa; /* Light background color for the section */
     text-align: center; /* Center-align the content */
+    height: 110vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-image.jpg') center/cover no-repeat;
 }
 
 /* About Heading */

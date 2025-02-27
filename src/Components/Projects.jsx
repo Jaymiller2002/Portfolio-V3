@@ -51,7 +51,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="app-section">
+    <section id="projects" className="app-section1">
       <div className="section-content">
         <h1>Projects</h1>
         {/* Dropdown to select individual projects */}

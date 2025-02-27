@@ -2,8 +2,15 @@
 .projects {
     height: 100vh;
     padding: 4rem 2rem; /* Generous padding for spacing */
-    background-color: #f4f4f4; /* Light background color */
+    background-color: #ffffffc4; /* Light background color */
     text-align: center; /* Center-align section content */
+}
+
+.app-section1 {
+    padding: 4rem 2rem;
+    text-align: center;
+    height: 340vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-image.jpg') center/cover no-repeat;
 }
 
 .projects h2 {
