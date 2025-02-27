@@ -68,7 +68,7 @@
 }
 
 .project h3:hover {
-    color: #e67e22; /* Change title color on hover */
+    color: #222fe6c2; /* Change title color on hover */
 }
 
 /* Dropdown Styling for Project Selection */
@@ -84,7 +84,7 @@
 }
 
 .project-select:hover {
-    border-color: #e67e22; /* Border color on hover */
+    border-color: #2229e6; /* Border color on hover */
 }
 
 /* Button to toggle project visibility */

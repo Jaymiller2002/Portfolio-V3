@@ -1,44 +1,46 @@
-/* Header Styles */
 header {
-    background: #2c3e50; /* Dark background for the header */
-    color: white; /* Text color */
-    padding: 1rem 2rem; /* Padding around the header */
-    display: flex; /* Flex layout for horizontal alignment */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center items vertically */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    position: sticky; /* Sticky header to keep it fixed on scroll */
-    top: 0; /* Position at the top */
-    z-index: 1000; /* Ensure it appears above other content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #333;
+    color: white;
 }
 
-/* Navigation Styles */
 nav {
-    display: flex; /* Flex layout for navigation items */
+    display: flex;
+    gap: 15px;
 }
 
-/* Link Styles */
 nav a {
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* Link text color */
-    margin: 0 1.5rem; /* Space between links */
-    font-weight: bold; /* Bold text for links */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    color: white;
+    text-decoration: none;
 }
 
-nav a:hover {
-    color: #e67e22; /* Change color on hover */
-    transform: scale(1.1); /* Slightly enlarge the link on hover */
+.burger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Hide nav by default on small screens */
+@media (max-width: 500px) {
     nav {
-        flex-direction: column; /* Stack links vertically on small screens */
-        align-items: center; /* Center-align links */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background: #222;
+        padding: 10px;
+        border-radius: 5px;
     }
 
-    nav a {
-        margin: 0.5rem 0; /* Space between stacked links */
+    .nav-open {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: block;
     }
 }

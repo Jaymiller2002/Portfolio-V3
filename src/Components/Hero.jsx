@@ -26,8 +26,9 @@ const Hero = () => {
                     </p>
                     <p>I'm passionate about building scalable web applications and engaging user interfaces.</p>
                     <div className="hero-buttons">
-                        <a href="#projects" className="cta-button">See My Work</a>
-                        <a href="#contact" className="cta-button">Let's Collaborate</a>
+                        <a href="/projects" className="cta-button">See My Work</a>
+                        <a href="/about" className="cta-button">About Me</a>
+                        <a href="/contact" className="cta-button">Contact Me</a>
                     </div>
                 </div>
                 <div className="hero-image">
