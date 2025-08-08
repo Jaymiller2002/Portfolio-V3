@@ -1,3 +1,9 @@
+// Import blog images
+import reactDevelopment from '../assets/images/reactDevelopment.jpg';
+import djangoAPI from '../assets/images/djangoAPI.png';
+import cssTechnologies from '../assets/images/cssTechnolgoies.jpeg';
+import jsPerformance from '../assets/images/jsPerformance.png';
+
 export const blogPosts = [
   {
     id: 1,
@@ -6,7 +12,7 @@ export const blogPosts = [
     category: 'react',
     date: '2024-01-15',
     readTime: '5 min read',
-    image: 'https://via.placeholder.com/400x250/667eea/ffffff?text=React+Development',
+    image: reactDevelopment,
     tags: ['React', 'JavaScript', 'Best Practices']
   },
   {
@@ -16,7 +22,7 @@ export const blogPosts = [
     category: 'django',
     date: '2024-01-10',
     readTime: '8 min read',
-    image: 'https://via.placeholder.com/400x250/764ba2/ffffff?text=Django+API',
+    image: djangoAPI,
     tags: ['Django', 'Python', 'API Development']
   },
   {
@@ -26,7 +32,7 @@ export const blogPosts = [
     category: 'css',
     date: '2024-01-05',
     readTime: '6 min read',
-    image: 'https://via.placeholder.com/400x250/667eea/ffffff?text=CSS+Techniques',
+    image: cssTechnologies,
     tags: ['CSS', 'Frontend', 'UX Design']
   },
   {
@@ -36,7 +42,7 @@ export const blogPosts = [
     category: 'javascript',
     date: '2023-12-28',
     readTime: '7 min read',
-    image: 'https://via.placeholder.com/400x250/764ba2/ffffff?text=JS+Performance',
+    image: jsPerformance,
     tags: ['JavaScript', 'Performance', 'Optimization']
   }
 ];

@@ -9,7 +9,7 @@ export const CONTACT_INFO = {
 // Social Media Links
 export const SOCIAL_LINKS = {
   github: 'https://github.com/jaymiller2002',
-  linkedin: 'https://linkedin.com/in/jay-miller-dev'
+  linkedin: 'https://www.linkedin.com/in/jay-miller-1701062a2/'
 };
 
 // Navigation Items
