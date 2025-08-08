@@ -1,69 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
-} from 'react-router-dom';
-
-// Project styles
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-// import './Header.css';
-// import './About.css';
-// import './Hero.css';
-// import './Projects.css';
-// import './Contact.css';
-
-import About from './Components/About';
 import App from './App';
-import ErrorPage from './ErrorPage';
-import Header from './Components/Header';
-import Footer from './Footer';
-import Hero from './Components/Hero';
-import Projects from './Components/Projects';
-import Contact from './Components/Contact';
 
-function Layout() {
-  return (
-    <>
-      <Header />
-      <div id='page-content'>
-        <Outlet />
-      </div>
-      <Footer />
-    </>
-  );
-}
+// Analytics tracking
+const trackPageView = (path) => {
+  // Google Analytics 4 tracking
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('config', 'GA_MEASUREMENT_ID', {
+      page_path: path,
+    });
+  }
+  
+  // Custom analytics
+  console.log(`Page view: ${path}`);
+};
 
-const router = createBrowserRouter([
-  {
-    element: <Layout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: '/',
-        element: <Hero />, // Set Hero as the landing page
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: '/about',
-        element: <About />,
-      },
-      {
-        path: '/projects',
-        element: <Projects />,
-      },
-      {
-        path: '/contact',
-        element: <Contact />,
-      },
-    ],
-  },
-]);
+// Performance monitoring
+const reportWebVitals = (metric) => {
+  console.log('Web Vitals:', metric);
+  
+  // Send to analytics service
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', metric.name, {
+      event_category: 'Web Vitals',
+      value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+      event_label: metric.id,
+      non_interaction: true,
+    });
+  }
+};
+
+// Track initial page load
+trackPageView(window.location.pathname);
+
+// Track route changes
+window.addEventListener('popstate', () => {
+  trackPageView(window.location.pathname);
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>
 );

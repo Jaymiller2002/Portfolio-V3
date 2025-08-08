@@ -1,0 +1,251 @@
+.appSection {
+  padding: 4rem 0;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+}
+
+.sectionContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.sectionContent h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.aboutCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.aboutInfo h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.aboutInfo p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.skillsSection {
+  margin: 2rem 0;
+}
+
+.skillsSection h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.typewriterContainer {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.typewriterText {
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.resumeSection {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.resumeSection h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.aboutButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-block;
+}
+
+.aboutButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.hireMeButton {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Skills Card */
+.skillsCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.skillsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.skillsHeader:hover {
+  color: #667eea;
+}
+
+.skillsHeader h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.expandIcon {
+  font-size: 1.2rem;
+  color: #667eea;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.skillsContent {
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skillItem {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.skillName {
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.skillLevel {
+  font-weight: 500;
+  color: #667eea;
+  font-size: 0.9rem;
+}
+
+.skillBar {
+  width: 100%;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skillProgress {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+/* Dark Mode Styles */
+.darkMode .aboutCard,
+.darkMode .skillsCard {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.darkMode .aboutInfo h1,
+.darkMode .skillsCard h3,
+.darkMode .skillName {
+  color: var(--text-primary);
+}
+
+.darkMode .aboutInfo p {
+  color: var(--text-secondary);
+}
+
+.darkMode .skillItem {
+  background: var(--bg-primary);
+  border-color: var(--border-color);
+}
+
+.darkMode .skillBar {
+  background: var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .sectionContent {
+    padding: 0 1rem;
+  }
+  
+  .sectionContent h2 {
+    font-size: 2rem;
+  }
+  
+  .aboutCard,
+  .skillsCard {
+    padding: 1.5rem;
+  }
+  
+  .aboutInfo h1 {
+    font-size: 1.5rem;
+  }
+} 

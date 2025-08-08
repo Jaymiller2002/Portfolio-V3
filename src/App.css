@@ -1,9 +1,0 @@
-#root {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-}
-#page-content {
-  flex-grow: 2;
-}
