@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
 import { skills, skillData } from '../../../data/skills';
-import Resume from '../../../assets/Jays_Resume.pdf';
+import Resume from '../../../assets/Updated_Resume.pdf';
 import styles from './About.module.css';
 
 const About = () => {
