@@ -105,6 +105,11 @@
   width: 100%;
 }
 
+/* Theme Toggle Styles */
+.themeToggleContainer {
+  position: relative;
+}
+
 .darkModeToggle {
   background: rgba(102, 126, 234, 0.1);
   border: none;
@@ -149,6 +154,66 @@
   transition: all 0.3s ease;
 }
 
+/* Theme Menu */
+.themeMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 140px;
+  z-index: 1001;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.themeOption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.themeOption:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+}
+
+.themeOption.active {
+  background: rgba(102, 126, 234, 0.15);
+  color: #667eea;
+  font-weight: 600;
+}
+
+.themeOption svg {
+  flex-shrink: 0;
+}
+
 .mobileMenuBtn {
   display: none;
   flex-direction: column;
@@ -188,39 +253,58 @@
 }
 
 /* Dark Mode Styles */
-.darkMode .header {
-  background: rgba(26, 26, 26, 0.95);
+.dark-mode .header {
+  background: rgba(15, 23, 42, 0.95);
   border-bottom: 1px solid var(--border-color);
 }
 
-.darkMode .header.scrolled {
-  background: rgba(26, 26, 26, 0.98);
+.dark-mode .header.scrolled {
+  background: rgba(15, 23, 42, 0.98);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
-.darkMode .navLink {
+.dark-mode .navLink {
   color: var(--text-primary);
 }
 
-.darkMode .navLink:hover {
-  color: #667eea;
+.dark-mode .navLink:hover {
+  color: #818cf8;
 }
 
-.darkMode .darkModeToggle {
+.dark-mode .darkModeToggle {
   color: var(--text-primary);
-  background: rgba(102, 126, 234, 0.15);
+  background: rgba(129, 140, 248, 0.15);
 }
 
-.darkMode .darkModeToggle:hover {
-  background: rgba(102, 126, 234, 0.25);
+.dark-mode .darkModeToggle:hover {
+  background: rgba(129, 140, 248, 0.25);
 }
 
-.darkMode .mobileMenuBtn span {
+.dark-mode .mobileMenuBtn span {
   background: var(--text-primary);
 }
 
-.darkMode .mobileMenuBtn:hover {
-  background: rgba(102, 126, 234, 0.15);
+.dark-mode .mobileMenuBtn:hover {
+  background: rgba(129, 140, 248, 0.15);
+}
+
+.dark-mode .themeMenu {
+  background: rgba(15, 23, 42, 0.95);
+  border-color: var(--border-color);
+}
+
+.dark-mode .themeOption {
+  color: var(--text-primary);
+}
+
+.dark-mode .themeOption:hover {
+  background: rgba(129, 140, 248, 0.1);
+  color: #818cf8;
+}
+
+.dark-mode .themeOption.active {
+  background: rgba(129, 140, 248, 0.15);
+  color: #818cf8;
 }
 
 @media (max-width: 768px) {
@@ -268,8 +352,8 @@
     text-align: center;
   }
 
-  .darkMode .nav {
-    background: rgba(26, 26, 26, 0.98);
+  .dark-mode .nav {
+    background: rgba(15, 23, 42, 0.98);
     border-bottom: 1px solid var(--border-color);
   }
 }
