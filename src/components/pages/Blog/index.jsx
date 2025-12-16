@@ -1,34 +1,26 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { blogPosts, blogCategories } from '../../../data/blogPosts';
+import {
+  internshipProjects,
+  projectCategories
+} from '../../../data/blogPosts';
 import styles from './Blog.module.css';
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const filteredPosts = selectedCategory === 'all' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
-
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    if (email) {
-      setIsSubscribed(true);
-      setEmail('');
-      // Here you would typically send the email to your backend
-      console.log('Newsletter subscription:', email);
-    }
-  };
+  const filteredProjects =
+    selectedCategory === 'all'
+      ? internshipProjects
+      : internshipProjects.filter(
+          (project) => project.category === selectedCategory
+        );
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
+      transition: { staggerChildren: 0.1 }
     }
   };
 
@@ -37,9 +29,7 @@ const Blog = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.5
-      }
+      transition: { duration: 0.5 }
     }
   };
 
@@ -51,16 +41,18 @@ const Blog = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Blog & Insights
+          Internship Projects & Assignments
         </motion.h2>
-        
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className={styles.blogIntro}
         >
-          Sharing my thoughts on web development, technology trends, and lessons learned from building applications.
+          A collection of real projects, features, and assignments I completed
+          during my 6-month internship, showcasing hands-on development
+          experience and impact.
         </motion.p>
 
         {/* Category Filter */}
@@ -70,91 +62,61 @@ const Blog = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className={styles.categoryFilter}
         >
-          {blogCategories.map((category) => (
+          {projectCategories.map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`${styles.filterBtn} ${selectedCategory === category.id ? styles.active : ''}`}
+              className={`${styles.filterBtn} ${
+                selectedCategory === category.id ? styles.active : ''
+              }`}
             >
               {category.name}
             </button>
           ))}
         </motion.div>
 
-        {/* Blog Posts Grid */}
+        {/* Projects Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className={styles.blogGrid}
         >
-          {filteredPosts.map((post) => (
+          {filteredProjects.map((project) => (
             <motion.article
-              key={post.id}
+              key={project.id}
               variants={itemVariants}
               className={styles.blogCard}
             >
               <div className={styles.blogImage}>
-                <img src={post.image} alt={post.title} />
-                <div className={styles.blogCategory}>{post.category}</div>
+                <img src={project.image} alt={project.title} />
+                <div className={styles.blogCategory}>{project.type}</div>
               </div>
-              
+
               <div className={styles.blogContent}>
                 <div className={styles.blogMeta}>
-                  <span className={styles.blogDate}>{post.date}</span>
-                  <span className={styles.blogReadTime}>{post.readTime} min read</span>
+                  <span className={styles.projectTimeframe}>
+                    {project.timeframe}
+                  </span>
                 </div>
-                
-                <h3>{post.title}</h3>
-                <p>{post.excerpt}</p>
-                
+
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+
                 <div className={styles.blogTags}>
-                  {post.tags.map((tag, index) => (
+                  {project.techStack.map((tech, index) => (
                     <span key={index} className={styles.blogTag}>
-                      {tag}
+                      {tech}
                     </span>
                   ))}
                 </div>
-                
-                <a href={post.url} className={styles.readMoreBtn}>
-                  Read More →
+
+                <a href={project.url} className={styles.readMoreBtn}>
+                  View Project →
                 </a>
               </div>
             </motion.article>
           ))}
-        </motion.div>
-
-        {/* Newsletter Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className={styles.newsletterSection}
-        >
-          <div className={styles.newsletterContent}>
-            <h3>Stay Updated</h3>
-            <p>Subscribe to my newsletter for the latest insights on web development and technology.</p>
-            
-            {!isSubscribed ? (
-              <form onSubmit={handleNewsletterSubmit} className={styles.newsletterForm}>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className={styles.newsletterInput}
-                />
-                <button type="submit" className={styles.newsletterBtn}>
-                  Subscribe
-                </button>
-              </form>
-            ) : (
-              <div className={styles.subscriptionSuccess}>
-                <p>✅ Thank you for subscribing!</p>
-              </div>
-            )}
-          </div>
         </motion.div>
       </div>
     </section>

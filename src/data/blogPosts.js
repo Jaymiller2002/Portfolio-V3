@@ -1,56 +1,92 @@
 // Import blog images
-import reactDevelopment from '../assets/images/reactDevelopment.jpg';
-import djangoAPI from '../assets/images/djangoAPI.png';
-import cssTechnologies from '../assets/images/cssTechnolgoies.jpeg';
-import jsPerformance from '../assets/images/jsPerformance.png';
+import anicLogo from '../assets/images/anicLogo.webp';
+import entrepeneurLogo from '../assets/images/entrepeneurLogo.webp';
+import parsingViewerImage from '../assets/images/parsingViewerImage.jpeg';
 
-export const blogPosts = [
+export const internshipProjects = [
   {
     id: 1,
-    title: 'Building Scalable React Applications',
-    excerpt: 'Learn the best practices for creating maintainable and scalable React applications that can grow with your business needs.',
-    category: 'react',
-    date: '2024-01-15',
-    readTime: '5 min read',
-    image: reactDevelopment,
-    tags: ['React', 'JavaScript', 'Best Practices']
+    title: '15 Year Timeline Page',
+    summary:
+      'Added a timeline page that goes over the entire history of Awesome Inc. Unfortunately, it has not been added to the live site yet.',
+    category: 'assignment',
+    timeframe: 'August 13th, 2024',
+    techStack: ['Gatsby', 'React', 'Animations', 'Sanity'],
+    image: anicLogo,
+    liveUrl: 'https://awesomeinc.org/',
+    githubUrl: 'https://github.com/ainc/ainc-gatsby-sanity',
+    type: 'Internship Project'
   },
   {
     id: 2,
-    title: 'Django REST Framework: A Complete Guide',
-    excerpt: 'Master Django REST Framework to build robust APIs that power modern web applications and mobile apps.',
-    category: 'django',
-    date: '2024-01-10',
-    readTime: '8 min read',
-    image: djangoAPI,
-    tags: ['Django', 'Python', 'API Development']
+    title: 'Airbnb Data Parser',
+    summary:
+      'Built a parser that extracts reviews, ratings, and comments from Airbnb .mbox files. Additionally, I added charts to provide a visual representation of the parsed data.',
+    category: 'assignment',
+    timeframe: 'August 10th, 2025',
+    techStack: ['React', 'JavaScript', 'Python', 'Flask', 'Chart.js', 'd3-cloud', 'flask-cors', 'File Handling', 'API Endpoints'],
+    image: parsingViewerImage,
+    liveUrl: 'https://dataset-website.vercel.app/',
+    githubUrl: 'https://github.com/Jaymiller2002/dataset-website',
+    type: 'Internship Project'
   },
   {
     id: 3,
-    title: 'Modern CSS Techniques for Better UX',
-    excerpt: 'Explore advanced CSS techniques including Grid, Flexbox, and animations to create stunning user experiences.',
-    category: 'css',
-    date: '2024-01-05',
-    readTime: '6 min read',
-    image: cssTechnologies,
-    tags: ['CSS', 'Frontend', 'UX Design']
+    title: 'New Blog Animation',
+    summary:
+      'Added a new animation to the blog page.',
+    category: 'assignment',
+    timeframe: 'November 16th, 2025',
+    techStack: ['Gatsby', 'React', 'Animations', 'Sanity'],
+    image: anicLogo,
+    liveUrl: 'https://awesomeinc.org/',
+    githubUrl: 'https://github.com/ainc/ainc-gatsby-sanity',
+    type: 'Internship Project'
   },
   {
     id: 4,
-    title: 'JavaScript Performance Optimization',
-    excerpt: 'Discover techniques to optimize JavaScript performance and create faster, more responsive web applications.',
-    category: 'javascript',
-    date: '2023-12-28',
-    readTime: '7 min read',
-    image: jsPerformance,
-    tags: ['JavaScript', 'Performance', 'Optimization']
+    title: 'Main Awesome Inc Website',
+    summary:
+      'Created a page for the 15-year timeline and implemented image optimizations.',
+    category: 'assignment',
+    timeframe: 'June 6th, 2024',
+    techStack: ['Gatsby', 'React', 'Animations', 'Sanity'],
+    image: anicLogo,
+    liveUrl: 'https://awesomeinc.org/',
+    githubUrl: 'https://github.com/ainc/ainc-gatsby-sanity',
+    type: 'Internship Project'
+  },
+  {
+    id: 5,
+    title: 'Entrepreneur Hall of Fame Website',
+    summary:
+      'Automated year creation for new inductees. For example, if a future inductee is added for 2026, the year 2026 is automatically generated.',
+    category: 'assignment',
+    timeframe: 'August 13th, 2024',
+    techStack: ['Gatsby', 'React', 'Animations', 'Sanity'],
+    image: entrepeneurLogo,
+    liveUrl: 'https://entrepreneurhof.com/',
+    githubUrl: 'https://github.com/ainc/hof-gatsby-sanity',
+    type: 'Internship Project'
+  },
+  {
+    id: 6,
+    title: 'Entrepreneur Hall of Fame Website',
+    summary:
+      'Added animations to the Founder Series page and fixed video playback issues.',
+    category: 'assignment',
+    timeframe: 'November 18th, 2025',
+    techStack: ['Gatsby', 'React', 'Animations', 'Sanity'],
+    image: entrepeneurLogo,
+    liveUrl: 'https://entrepreneurhof.com/',
+    githubUrl: 'https://github.com/ainc/hof-gatsby-sanity',
+    type: 'Internship Project'
   }
 ];
 
-export const blogCategories = [
-  { id: 'all', name: 'All Posts' },
-  { id: 'react', name: 'React' },
-  { id: 'django', name: 'Django' },
-  { id: 'javascript', name: 'JavaScript' },
-  { id: 'css', name: 'CSS' }
-]; 
+export const projectCategories = [
+  { id: 'all', name: 'All Work' },
+  { id: 'frontend', name: 'Frontend' },
+  { id: 'backend', name: 'Backend' },
+  { id: 'assignment', name: 'Assignments' }
+];
